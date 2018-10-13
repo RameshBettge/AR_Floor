@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CrashTester : MonoBehaviour {
-
+    public GameObject message;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,8 +15,8 @@ public class CrashTester : MonoBehaviour {
 	}
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "hindernis") {
-            Destroy(other.gameObject);
-        }
+
+            message.SetActive(true);
+        
     }
 }

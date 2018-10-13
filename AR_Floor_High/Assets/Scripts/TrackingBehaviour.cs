@@ -69,7 +69,7 @@ public class TrackingBehaviour : MonoBehaviour, ITrackableEventHandler
         if(allMarkers.Length == 2) {
             resultDistance = allMarkers[1] - allMarkers[0];
             Vector3.Normalize(resultDistance);
-            Instantiate(trapPrefab, resultDistance*2, transform.rotation);
+            //Instantiate(trapPrefab, resultDistance*2, transform.rotation);
         }
 
 
