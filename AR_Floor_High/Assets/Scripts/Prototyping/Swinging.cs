@@ -58,7 +58,7 @@ public class Swinging : MonoBehaviour
             timer += Time.deltaTime;
             yield return wait;
         }
-        timer -= 1f;
+        timer -= halfRotTime;
         percentage = timer / halfRotTime;
 
         // back to middle
