@@ -31,6 +31,8 @@ public class PendulumMove : MonoBehaviour
     AnimationCurve smoothCurve;
     [SerializeField]
     bool disableAtEnd;
+    [SerializeField]
+    bool disableAtStart;
 
 
 
@@ -83,13 +85,14 @@ public class PendulumMove : MonoBehaviour
                 case PendulumState.From:
                     currentState = PendulumState.AtStart;
                     targetTime = StartWait;
-
+                    if (disableAtStart) { ToggleActive(false); }
                     break;
                 case PendulumState.AtStart:
                     //Starting Again
                     if (disableAtEnd) { ToggleActive(true); }
                     currentState = PendulumState.To;
                     targetTime = ToDuration;
+                    if (disableAtStart) { ToggleActive(true); }
                     break;
                 case PendulumState.Delayed:
                     currentState = PendulumState.To;
@@ -130,7 +133,16 @@ public class PendulumMove : MonoBehaviour
 
     void ToggleActive(bool b)
     {
-        GetComponent<Collider>().enabled = b;
-        GetComponent<Renderer>().enabled = b;
+
+        Collider[] cols = GetComponentsInChildren<Collider>();
+        foreach (Collider Col in cols)
+        {
+            Col.enabled = b;
+        }
+        Renderer[] rends = GetComponentsInChildren<Renderer>();
+        foreach (Renderer rend in rends)
+        {
+            rend.enabled = b;
+        }
     }
 }
