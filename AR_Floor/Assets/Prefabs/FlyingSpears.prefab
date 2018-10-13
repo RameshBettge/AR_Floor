@@ -123,7 +123,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1994117120004088}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.58, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -134,7 +134,7 @@ Transform:
   - {fileID: 4780889825756772}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4683036238478014
 Transform:
   m_ObjectHideFlags: 1
@@ -481,13 +481,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45385faa14404144db377a8b6215e3ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dimension: 1
+  dimension: 2
   Delay: 0
-  StartValue: 0
-  EndValue: 3
-  ToDuration: 0.2
-  FromDuration: 1
-  StartWait: 3
+  StartValue: -8
+  EndValue: 8
+  ToDuration: 0.5
+  FromDuration: 0
+  StartWait: 1
   EndWait: 1
   smoothCurve:
     serializedVersion: 2
@@ -513,5 +513,5 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  disableAtEnd: 0
-  disableAtStart: 1
+  disableAtEnd: 1
+  disableAtStart: 0
