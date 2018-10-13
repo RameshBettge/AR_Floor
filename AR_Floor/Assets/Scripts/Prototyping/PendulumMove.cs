@@ -4,6 +4,8 @@ using UnityEngine;
 
 //enum is out of class so an instance can be displayed in editor
 public  enum PendulumState { To, AtEnd, From, AtStart, Delayed}
+enum Dimension { X, Y, Z }
+
 
 public class PendulumMove : MonoBehaviour
 {
@@ -31,9 +33,11 @@ public class PendulumMove : MonoBehaviour
     bool disableAtEnd;
 
 
+
+
+
     delegate float LerpDel(float timer);
 
-    enum Dimension { X, Y, Z }
 
     PendulumState currentState;
     float timer;
